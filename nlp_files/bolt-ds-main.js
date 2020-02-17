@@ -131,7 +131,7 @@ loadScript(main).then(() => {}).catch(e => console.log(e));
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.4998.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.5021.0\"}");
 
 /***/ })
 
