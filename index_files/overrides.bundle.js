@@ -87,7 +87,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1c7c39b04fde05efa013a5dd28010598b8a06274/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/c266b29198fe7334509cbb1898e00a4888203d43/";
 /******/
 /******/
 /******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;

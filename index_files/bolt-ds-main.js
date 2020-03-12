@@ -93,7 +93,7 @@
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.5138.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.5161.0\"}");
 
 /***/ }),
 
@@ -113,10 +113,10 @@ const {
 
 if (window.location.search.indexOf('BoltSource') < 0) {
   //eslint-disable-line lodash/prefer-includes
-  window.boltBase = "https://static.parastorage.com/services/wix-bolt/".concat(bolt);
+  window.boltBase = `https://static.parastorage.com/services/wix-bolt/${bolt}`;
 }
 
-const main = "".concat(window.boltBase, "/bolt-main/app/main-r.min.js");
+const main = `${window.boltBase}/bolt-main/app/main-r.min.js`;
 
 const loadScript = (src, name) => new Promise(resolve => {
   const element = document.createElement('script');
@@ -128,7 +128,7 @@ const loadScript = (src, name) => new Promise(resolve => {
 
   document.body.appendChild(element);
 }).catch(err => {
-  console.log("Failed to load script ".concat(name, ": ").concat(err.message)); //eslint-disable-line no-console
+  console.log(`Failed to load script ${name}: ${err.message}`); //eslint-disable-line no-console
 });
 
 loadScript(main).then(() => {}).catch(e => console.log(e));
