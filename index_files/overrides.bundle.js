@@ -87,17 +87,17 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/c266b29198fe7334509cbb1898e00a4888203d43/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1129.0/";
 /******/
 /******/
 /******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 62);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 59:
+/***/ 62:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
@@ -115,7 +115,7 @@ var createOverrideMap = function createOverrideMap(requireFn) {
     return overridesMap;
   }, {});
 };
-var componentOverrides = createOverrideMap(__webpack_require__(60));
+var componentOverrides = createOverrideMap(__webpack_require__(63));
 
 function getOverrides() {
   return componentOverrides;
@@ -127,7 +127,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 60:
+/***/ 63:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
@@ -144,7 +144,7 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 60;
+webpackEmptyContext.id = 63;
 
 /***/ })
 

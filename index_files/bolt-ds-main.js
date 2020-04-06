@@ -93,7 +93,7 @@
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.5161.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.5594.0\"}");
 
 /***/ }),
 
@@ -131,6 +131,7 @@ const loadScript = (src, name) => new Promise(resolve => {
   console.log(`Failed to load script ${name}: ${err.message}`); //eslint-disable-line no-console
 });
 
+loadScript('https://static.parastorage.com/unpkg-semver/wix-recorder@^1/app.bundle.min.js').catch(e => console.log(e));
 loadScript(main).then(() => {}).catch(e => console.log(e));
 
 /***/ })
