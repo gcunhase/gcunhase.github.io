@@ -7,7 +7,7 @@
 		exports["viewerComponentService"] = factory(require("react"), require("prop-types"), require("lodash"), require("santa-components"), require("react-dom"));
 	else
 		root["viewerComponentService"] = factory(root["React"], root["prop-types"], root["_"], root["santaComponents"], root["ReactDOM"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__25__) {
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__28__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -46,15 +46,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		40: 0,
-/******/ 		37: 0
+/******/ 		42: 0,
+/******/ 		38: 0
 /******/ 	};
 /******/
 /******/
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"42":"wixui.AddressInput","43":"wixui.BarChart","44":"wixui.Captcha","45":"wixui.CustomElement","46":"wixui.ImageX","47":"wixui.LineShareButton","48":"wixui.MusicPlayer","49":"wixui.Pagination","50":"wixui.ProgressBar","51":"wixui.RatingsDisplay","52":"wixui.RatingsInput","53":"wixui.RichTextBox","54":"wixui.SearchBox","55":"wixui.SelectionTagsList","56":"wixui.SignatureInput","57":"wixui.Slider","58":"wixui.StylableButton","59":"wixui.StylableHorizontalMenu","60":"wixui.StylableLine","61":"wixui.Tags","62":"wixui.TimePicker","63":"wixui.ToggleSwitch","64":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
+/******/ 		return __webpack_require__.p + "" + ({"41":"stylable-menu-scroller","44":"wixui.AddressInput","45":"wixui.BarChart","46":"wixui.BoltComponent","47":"wixui.Captcha","48":"wixui.CustomElement","49":"wixui.ImageX","50":"wixui.LineShareButton","51":"wixui.MusicPlayer","52":"wixui.Pagination","53":"wixui.ProgressBar","54":"wixui.RatingsDisplay","55":"wixui.RatingsInput","56":"wixui.RichTextBox","57":"wixui.SearchBox","58":"wixui.SelectionTagsList","59":"wixui.SignatureInput","60":"wixui.Slider","61":"wixui.StylableButton","62":"wixui.StylableHorizontalMenu","63":"wixui.StylableLine","64":"wixui.Tags","65":"wixui.TimePicker","66":"wixui.ToggleSwitch","67":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -193,17 +193,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1148.0/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1247.0/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	/* runtime version: 1.4.0 */
+/******/ 	/* runtime version: 3.7.0 */
 /******/ 	function StylableRuntime(exports){
 /******/ 	exports = exports || {};
 /******/ 	function require(){return exports;};
 /******/
 /******/ 	(function(){/* source: cached-node-renderer.ts */
+/******/ 	exports.CacheStyleNodeRenderer = void 0;
 /******/ 	var CacheStyleNodeRenderer = /** @class */ (function () {
 /******/ 	    function CacheStyleNodeRenderer(options) {
 /******/ 	        var _this = this;
@@ -229,12 +230,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	exports.CacheStyleNodeRenderer = CacheStyleNodeRenderer;
 /******/ 	}());
 /******/ 	(function(){/* source: keyed-list-renderer.ts */
+/******/ 	exports.createDOMListRenderer = void 0;
 /******/ 	function createDOMListRenderer(nodeRenderer) {
 /******/ 	    var first;
 /******/ 	    var nodes = {};
-/******/ 	    var setNode = function (dataItem, node) {
-/******/ 	        return (nodes[nodeRenderer.renderKey(dataItem)] = node);
-/******/ 	    };
+/******/ 	    var setNode = function (dataItem, node) { return (nodes[nodeRenderer.renderKey(dataItem)] = node); };
 /******/ 	    var renderNode = function (dataItem) {
 /******/ 	        var key = nodeRenderer.renderKey(dataItem);
 /******/ 	        var node = nodes[key];
@@ -244,10 +244,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	    };
 /******/ 	    var render = function (container, data) {
 /******/ 	        if (data === void 0) { data = []; }
-/******/ 	        var node;
 /******/ 	        if (data.length) {
+/******/ 	            var node = void 0;
 /******/ 	            var next = first;
-/******/ 	            // tslint:disable-next-line:prefer-for-of
 /******/ 	            for (var i = 0; i < data.length; i++) {
 /******/ 	                node = renderNode(data[i]);
 /******/ 	                if (node !== next) {
@@ -280,6 +279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	exports.createDOMListRenderer = createDOMListRenderer;
 /******/ 	}());
 /******/ 	(function(){/* source: css-runtime-renderer.ts */
+/******/ 	exports.$ = exports.RuntimeRenderer = void 0;
 /******/ 	var cached_node_renderer_1 = require("./cached-node-renderer");
 /******/ 	var keyed_list_renderer_1 = require("./keyed-list-renderer");
 /******/ 	var RuntimeRenderer = /** @class */ (function () {
@@ -306,7 +306,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	        this.window = _window;
 /******/ 	        this.renderer = keyed_list_renderer_1.createDOMListRenderer(new cached_node_renderer_1.CacheStyleNodeRenderer({
 /******/ 	            attrKey: 'st-id' + (this.id ? '-' + this.id : ''),
-/******/ 	            createElement: _window.document.createElement.bind(_window.document)
+/******/ 	            createElement: _window.document.createElement.bind(_window.document),
 /******/ 	        }));
 /******/ 	        this.update();
 /******/ 	    };
@@ -367,70 +367,92 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	exports.$ = new RuntimeRenderer();
 /******/ 	}());
 /******/ 	(function(){/* source: css-runtime-stylesheet.ts */
-/******/ 	function create(root, namespace, locals, css, depth, id) {
-/******/ 	    var dataNamespace = 'data-' + namespace.toLowerCase() + '-';
+/******/ 	exports.createRenderable = exports.create = void 0;
+/******/ 	var stateMiddleDelimiter = '-';
+/******/ 	var booleanStateDelimiter = '--';
+/******/ 	var stateWithParamDelimiter = '---';
+/******/ 	function create(namespace, exports, css, depth, id, renderer) {
+/******/ 	    var stylesheet = {
+/******/ 	        namespace: namespace,
+/******/ 	        classes: exports.classes,
+/******/ 	        keyframes: exports.keyframes,
+/******/ 	        vars: exports.vars,
+/******/ 	        stVars: exports.stVars,
+/******/ 	        cssStates: cssStates,
+/******/ 	        style: style,
+/******/ 	        st: style,
+/******/ 	        $id: id,
+/******/ 	        $depth: depth,
+/******/ 	        $css: css,
+/******/ 	    };
+/******/ 	    if (renderer) {
+/******/ 	        renderer.register(stylesheet);
+/******/ 	    }
 /******/ 	    function cssStates(stateMapping) {
-/******/ 	        return stateMapping
-/******/ 	            ? Object.keys(stateMapping).reduce(function (states, key) {
-/******/ 	                var stateValue = stateMapping[key];
-/******/ 	                if (stateValue === undefined ||
-/******/ 	                    stateValue === null ||
-/******/ 	                    stateValue === false) {
-/******/ 	                    return states;
-/******/ 	                }
-/******/ 	                states[dataNamespace + key.toLowerCase()] = stateValue;
-/******/ 	                return states;
-/******/ 	            }, {})
-/******/ 	            : {};
-/******/ 	    }
-/******/ 	    function get(localName) {
-/******/ 	        return locals[localName];
-/******/ 	    }
-/******/ 	    function mapClasses(className) {
-/******/ 	        return className
-/******/ 	            .split(/\s+/g)
-/******/ 	            .map(function (className) { return get(className) || className; })
-/******/ 	            .join(' ');
-/******/ 	    }
-/******/ 	    locals.$root = root;
-/******/ 	    locals.$namespace = namespace;
-/******/ 	    locals.$depth = depth;
-/******/ 	    locals.$id = id;
-/******/ 	    locals.$css = css;
-/******/ 	    locals.$get = get;
-/******/ 	    locals.$cssStates = cssStates;
-/******/ 	    function stylable_runtime_stylesheet(className, states, inheritedAttributes) {
-/******/ 	        className = className ? mapClasses(className) : '';
-/******/ 	        var base = cssStates(states);
-/******/ 	        if (inheritedAttributes) {
-/******/ 	            for (var k in inheritedAttributes) {
-/******/ 	                if (k.match(/^data-/)) {
-/******/ 	                    base[k] = inheritedAttributes[k];
-/******/ 	                }
-/******/ 	            }
-/******/ 	            if (inheritedAttributes.className) {
-/******/ 	                className += ' ' + inheritedAttributes.className;
+/******/ 	        var classNames = [];
+/******/ 	        for (var stateName in stateMapping) {
+/******/ 	            var stateValue = stateMapping[stateName];
+/******/ 	            var stateClass = createStateClass(stateName, stateValue);
+/******/ 	            if (stateClass) {
+/******/ 	                classNames.push(stateClass);
 /******/ 	            }
 /******/ 	        }
-/******/ 	        if (className) {
-/******/ 	            base.className = className;
-/******/ 	        }
-/******/ 	        return base;
+/******/ 	        return classNames.join(' ');
 /******/ 	    }
-/******/ 	    Object.setPrototypeOf(stylable_runtime_stylesheet, locals);
-/******/ 	    // EDGE CACHE BUG FIX
-/******/ 	    stylable_runtime_stylesheet[locals.$root] = locals[locals.$root];
-/******/ 	    return stylable_runtime_stylesheet;
+/******/ 	    function createBooleanStateClassName(stateName) {
+/******/ 	        return "" + namespace + booleanStateDelimiter + stateName;
+/******/ 	    }
+/******/ 	    function createStateWithParamClassName(stateName, param) {
+/******/ 	        return "" + namespace + stateWithParamDelimiter + stateName + stateMiddleDelimiter + param.length + stateMiddleDelimiter + param.replace(/\s/gm, '_');
+/******/ 	    }
+/******/ 	    function createStateClass(stateName, stateValue) {
+/******/ 	        if (stateValue === false ||
+/******/ 	            stateValue === undefined ||
+/******/ 	            stateValue === null ||
+/******/ 	            stateValue !== stateValue // check NaN
+/******/ 	        ) {
+/******/ 	            return '';
+/******/ 	        }
+/******/ 	        if (stateValue === true) {
+/******/ 	            // boolean state
+/******/ 	            return createBooleanStateClassName(stateName);
+/******/ 	        }
+/******/ 	        var valueAsString = stateValue.toString();
+/******/ 	        return createStateWithParamClassName(stateName, valueAsString);
+/******/ 	    }
+/******/ 	    function style() {
+/******/ 	        var classNames = [];
+/******/ 	        for (var i = 0; i < arguments.length; i++) {
+/******/ 	            // eslint-disable-next-line prefer-rest-params
+/******/ 	            var item = arguments[i];
+/******/ 	            if (item) {
+/******/ 	                if (typeof item === 'string') {
+/******/ 	                    classNames[classNames.length] = item;
+/******/ 	                }
+/******/ 	                else if (i === 1) {
+/******/ 	                    for (var stateName in item) {
+/******/ 	                        var stateValue = item[stateName];
+/******/ 	                        var stateClass = createStateClass(stateName, stateValue);
+/******/ 	                        if (stateClass) {
+/******/ 	                            classNames[classNames.length] = stateClass;
+/******/ 	                        }
+/******/ 	                    }
+/******/ 	                }
+/******/ 	            }
+/******/ 	        }
+/******/ 	        return classNames.join(' ');
+/******/ 	    }
+/******/ 	    return stylesheet;
 /******/ 	}
 /******/ 	exports.create = create;
-/******/ 	function createTheme(css, depth, id) {
+/******/ 	function createRenderable(css, depth, id) {
 /******/ 	    return { $css: css, $depth: depth, $id: id, $theme: true };
 /******/ 	}
-/******/ 	exports.createTheme = createTheme;
+/******/ 	exports.createRenderable = createRenderable;
 /******/ 	}());;
 /******/ 	return exports;
 /******/ 	};
-/******/ 	(typeof self !== 'undefined' ? self : this)["__stylable_yoshi__"] = __webpack_require__.stylable = (typeof self !== 'undefined' ? self : this)["__stylable_yoshi__"] || StylableRuntime();
+/******/ 	(typeof self !== 'undefined' ? self : this)["__stylable3_runtime__"] = __webpack_require__.stylable = (typeof self !== 'undefined' ? self : this)["__stylable3_runtime__"] || StylableRuntime();
 /******/ 	var jsonpArray = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] = (typeof self !== 'undefined' ? self : this)["webpackJsonp_wix_ui_santa"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
@@ -440,7 +462,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1376);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1402);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -469,7 +491,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 101:
+/***/ 110:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
@@ -484,7 +506,7 @@ var createOverrideMap = function createOverrideMap(requireFn) {
   }, {});
 };
 
-var componentOverrides = createOverrideMap(__webpack_require__(102));
+var componentOverrides = createOverrideMap(__webpack_require__(111));
 
 function getOverrides() {
   return componentOverrides;
@@ -496,7 +518,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 102:
+/***/ 111:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
@@ -512,11 +534,99 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 102;
+webpackEmptyContext.id = 111;
 
 /***/ }),
 
-/***/ 135:
+/***/ 1402:
+/*!**************************************!*\
+  !*** ./components-service/viewer.js ***!
+  \**************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var BaseService = __webpack_require__(/*! ./base-service */ 150);
+
+var compsToPackages = {
+  'wixui.RichTextBox': function wixuiRichTextBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 56).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 669))]);
+  },
+  'wixui.ToggleSwitch': function wixuiToggleSwitch() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 66).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 668))]);
+  },
+  'wixui.Slider': function wixuiSlider() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 60).then(__webpack_require__.bind(null, /*! ../components/Slider */ 718))]);
+  },
+  'wixui.SearchBox': function wixuiSearchBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 57).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 723))]);
+  },
+  'wixui.Captcha': function wixuiCaptcha() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 47).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 712))]);
+  },
+  'wixui.Pagination': function wixuiPagination() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 52).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 707))]);
+  },
+  'wixui.AddressInput': function wixuiAddressInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 44).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 726))]);
+  },
+  'wixui.StylableLine': function wixuiStylableLine() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 63).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 738))]);
+  },
+  'wixui.Tags': function wixuiTags() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 64).then(__webpack_require__.bind(null, /*! ../components/Tags */ 709))]);
+  },
+  'wixui.RatingsInput': function wixuiRatingsInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 55).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 710))]);
+  },
+  'wixui.TimePicker': function wixuiTimePicker() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 65).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 731))]);
+  },
+  'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 54).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 713))]);
+  },
+  'wixui.VideoPlayer': function wixuiVideoPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 67).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 703))]);
+  },
+  'wixui.LineShareButton': function wixuiLineShareButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 50).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 735))]);
+  },
+  'wixui.MusicPlayer': function wixuiMusicPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 51).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 648))]);
+  },
+  'wixui.StylableButton': function wixuiStylableButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 61).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 740))]);
+  },
+  'wixui.ProgressBar': function wixuiProgressBar() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 53).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 720))]);
+  },
+  'wixui.BarChart': function wixuiBarChart() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 45).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 715))]);
+  },
+  'wixui.CustomElementComponent': function wixuiCustomElementComponent() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 48).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 779))]);
+  },
+  'wixui.SignatureInput': function wixuiSignatureInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 59).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 777))]);
+  },
+  'wixui.SelectionTagsList': function wixuiSelectionTagsList() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 58).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 782))]);
+  },
+  'wixui.StylableHorizontalMenu': function wixuiStylableHorizontalMenu() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 62).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 784))]);
+  },
+  'wixui.ImageX': function wixuiImageX() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 49).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 787))]);
+  },
+  'wixui.BoltComponent': function wixuiBoltComponent() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BoltComponent */ 46).then(__webpack_require__.bind(null, /*! ../components/BoltComponent */ 791))]);
+  }
+};
+module.exports = new BaseService(compsToPackages);
+
+/***/ }),
+
+/***/ 150:
 /*!********************************************!*\
   !*** ./components-service/base-service.js ***!
   \********************************************/
@@ -524,7 +634,7 @@ webpackEmptyContext.id = 102;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ../overrides */ 101),
+var _require = __webpack_require__(/*! ../overrides */ 110),
     getOverrides = _require.getOverrides;
 
 function BaseService(_compsToPackages) {
@@ -595,92 +705,7 @@ module.exports = BaseService;
 
 /***/ }),
 
-/***/ 1376:
-/*!**************************************!*\
-  !*** ./components-service/viewer.js ***!
-  \**************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var BaseService = __webpack_require__(/*! ./base-service */ 135);
-
-var compsToPackages = {
-  'wixui.RichTextBox': function wixuiRichTextBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 53).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 661))]);
-  },
-  'wixui.ToggleSwitch': function wixuiToggleSwitch() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 63).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 660))]);
-  },
-  'wixui.Slider': function wixuiSlider() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 57).then(__webpack_require__.bind(null, /*! ../components/Slider */ 710))]);
-  },
-  'wixui.SearchBox': function wixuiSearchBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 54).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 715))]);
-  },
-  'wixui.Captcha': function wixuiCaptcha() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 44).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 704))]);
-  },
-  'wixui.Pagination': function wixuiPagination() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 49).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 699))]);
-  },
-  'wixui.AddressInput': function wixuiAddressInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 42).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 718))]);
-  },
-  'wixui.StylableLine': function wixuiStylableLine() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 60).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 729))]);
-  },
-  'wixui.Tags': function wixuiTags() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 61).then(__webpack_require__.bind(null, /*! ../components/Tags */ 701))]);
-  },
-  'wixui.RatingsInput': function wixuiRatingsInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 52).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 702))]);
-  },
-  'wixui.TimePicker': function wixuiTimePicker() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 62).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 722))]);
-  },
-  'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 51).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 705))]);
-  },
-  'wixui.VideoPlayer': function wixuiVideoPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 64).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 695))]);
-  },
-  'wixui.LineShareButton': function wixuiLineShareButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 47).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 726))]);
-  },
-  'wixui.MusicPlayer': function wixuiMusicPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 48).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 639))]);
-  },
-  'wixui.StylableButton': function wixuiStylableButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 58).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 731))]);
-  },
-  'wixui.ProgressBar': function wixuiProgressBar() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 50).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 712))]);
-  },
-  'wixui.BarChart': function wixuiBarChart() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 43).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 707))]);
-  },
-  'wixui.CustomElementComponent': function wixuiCustomElementComponent() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 45).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 770))]);
-  },
-  'wixui.SignatureInput': function wixuiSignatureInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 56).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 768))]);
-  },
-  'wixui.SelectionTagsList': function wixuiSelectionTagsList() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 55).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 773))]);
-  },
-  'wixui.StylableHorizontalMenu': function wixuiStylableHorizontalMenu() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 59).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 775))]);
-  },
-  'wixui.ImageX': function wixuiImageX() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 46).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 780))]);
-  }
-};
-module.exports = new BaseService(compsToPackages);
-
-/***/ }),
-
-/***/ 25:
+/***/ 28:
 /*!****************************************************************************************************!*\
   !*** external {"amd":"reactDOM","commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"} ***!
   \****************************************************************************************************/
@@ -688,7 +713,7 @@ module.exports = new BaseService(compsToPackages);
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__25__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__28__;
 
 /***/ }),
 

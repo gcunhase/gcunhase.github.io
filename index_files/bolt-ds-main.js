@@ -93,7 +93,7 @@
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.5743.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.6299.0\"}");
 
 /***/ }),
 

@@ -178,6 +178,9 @@ body.device-mobile-non-optimized.fullScreenMode {
   body.device-mobile-non-optimized.fullScreenMode #MOBILE_ACTIONS_MENU {
     visibility: hidden; }
 
+body.fullScreenMode #WIX_ADS {
+  visibility: hidden; }
+
 body.fullScreenMode {
   overflow-x: hidden !important;
   overflow-y: hidden !important; }
@@ -437,7 +440,8 @@ a.wixAppsLink img {
   background: -webkit-repeating-linear-gradient(135deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
   background: repeating-linear-gradient(-45deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
   background-size: 6px 6px;
-  background-repeat: repeat; }
+  background-repeat: repeat;
+  pointer-events: none; }
 
 .g-transparent-a:link, .g-transparent-a:visited {
   border-color: transparent; }
