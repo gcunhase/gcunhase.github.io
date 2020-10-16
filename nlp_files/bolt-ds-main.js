@@ -93,7 +93,40 @@
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.5138.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.6684.0\"}");
+
+/***/ }),
+
+/***/ "./src/index-tb.js":
+/*!*************************!*\
+  !*** ./src/index-tb.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const {
+  loadScript,
+  loadStyle
+} = __webpack_require__(/*! ./utils */ "./src/utils.js");
+
+const startTb = () => {
+  const viewerSource = new URLSearchParams(window.location.search).get('viewerSource');
+  window.viewerBase = /^\d/.test(viewerSource) ? `https://static.parastorage.com/services/wix-thunderbolt/${viewerSource}` : viewerSource;
+  fetch(`${window.viewerBase}/manifest.min.json`).then(x => x.json()).then(manifest => Object.entries(manifest).forEach(([entry, src]) => {
+    if (/.js$/.test(src)) {
+      loadScript(src, entry);
+    } else if (/.css$/.test(src)) {
+      loadStyle(src, entry);
+    }
+  })).catch(e => console.log(e));
+};
+
+module.exports = {
+  startTb
+};
 
 /***/ }),
 
@@ -111,12 +144,39 @@ const {
   bolt
 } = __webpack_require__(/*! ../dist/versions.json */ "./dist/versions.json");
 
+const {
+  loadScript
+} = __webpack_require__(/*! ./utils */ "./src/utils.js");
+
+const {
+  startTb
+} = __webpack_require__(/*! ./index-tb */ "./src/index-tb.js");
+
 if (window.location.search.indexOf('BoltSource') < 0) {
   //eslint-disable-line lodash/prefer-includes
-  window.boltBase = "https://static.parastorage.com/services/wix-bolt/".concat(bolt);
+  window.boltBase = `https://static.parastorage.com/services/wix-bolt/${bolt}`;
 }
 
-const main = "".concat(window.boltBase, "/bolt-main/app/main-r.min.js");
+const main = `${window.boltBase}/bolt-main/app/main-r.min.js`;
+loadScript('https://static.parastorage.com/unpkg-semver/wix-recorder@^1/app.bundle.min.js').catch(e => console.log(e)); //eslint-disable-next-line lodash/prefer-includes
+
+if (window.location.search.indexOf('viewerSource') >= 0) {
+  startTb();
+} else {
+  loadScript(main).then(() => {}).catch(e => console.log(e));
+}
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 const loadScript = (src, name) => new Promise(resolve => {
   const element = document.createElement('script');
@@ -128,10 +188,25 @@ const loadScript = (src, name) => new Promise(resolve => {
 
   document.body.appendChild(element);
 }).catch(err => {
-  console.log("Failed to load script ".concat(name, ": ").concat(err.message)); //eslint-disable-line no-console
+  console.log(`Failed to load script ${name}: ${err.message}`); //eslint-disable-line no-console
 });
 
-loadScript(main).then(() => {}).catch(e => console.log(e));
+const loadStyle = (href, name) => new Promise(resolve => {
+  const element = document.createElement('link');
+  element.rel = 'stylesheet';
+  element.href = href;
+
+  element.onload = () => resolve();
+
+  document.body.appendChild(element);
+}).catch(err => {
+  console.log(`Failed to load script ${name}: ${err.message}`); //eslint-disable-line no-console
+});
+
+module.exports = {
+  loadScript,
+  loadStyle
+};
 
 /***/ })
 

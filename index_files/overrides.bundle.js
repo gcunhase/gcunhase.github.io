@@ -87,16 +87,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1247.0/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1378.0/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 110);
+/******/ 	return __webpack_require__(__webpack_require__.s = 120);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 110:
+/***/ 120:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
@@ -111,7 +111,7 @@ var createOverrideMap = function createOverrideMap(requireFn) {
   }, {});
 };
 
-var componentOverrides = createOverrideMap(__webpack_require__(111));
+var componentOverrides = createOverrideMap(__webpack_require__(121));
 
 function getOverrides() {
   return componentOverrides;
@@ -123,7 +123,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 111:
+/***/ 121:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
@@ -139,7 +139,7 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 111;
+webpackEmptyContext.id = 121;
 
 /***/ })
 

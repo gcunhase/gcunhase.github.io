@@ -7,7 +7,7 @@
 		exports["viewerComponentService"] = factory(require("react"), require("prop-types"), require("lodash"), require("santa-components"), require("react-dom"));
 	else
 		root["viewerComponentService"] = factory(root["React"], root["prop-types"], root["_"], root["santaComponents"], root["ReactDOM"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__28__) {
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__30__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -47,14 +47,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
 /******/ 		42: 0,
-/******/ 		38: 0
+/******/ 		39: 0
 /******/ 	};
 /******/
 /******/
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"41":"stylable-menu-scroller","44":"wixui.AddressInput","45":"wixui.BarChart","46":"wixui.BoltComponent","47":"wixui.Captcha","48":"wixui.CustomElement","49":"wixui.ImageX","50":"wixui.LineShareButton","51":"wixui.MusicPlayer","52":"wixui.Pagination","53":"wixui.ProgressBar","54":"wixui.RatingsDisplay","55":"wixui.RatingsInput","56":"wixui.RichTextBox","57":"wixui.SearchBox","58":"wixui.SelectionTagsList","59":"wixui.SignatureInput","60":"wixui.Slider","61":"wixui.StylableButton","62":"wixui.StylableHorizontalMenu","63":"wixui.StylableLine","64":"wixui.Tags","65":"wixui.TimePicker","66":"wixui.ToggleSwitch","67":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
+/******/ 		return __webpack_require__.p + "" + ({"44":"wixui.AddressInput","45":"wixui.BarChart","46":"wixui.BoltComponent","47":"wixui.Captcha","48":"wixui.CustomElement","49":"wixui.ImageX","50":"wixui.LineShareButton","51":"wixui.MusicPlayer","52":"wixui.Pagination","53":"wixui.ProgressBar","54":"wixui.RatingsDisplay","55":"wixui.RatingsInput","56":"wixui.RichTextBox","57":"wixui.SearchBox","58":"wixui.SelectionTagsList","59":"wixui.SignatureInput","60":"wixui.Slider","61":"wixui.SocialAuth","62":"wixui.StylableButton","63":"wixui.StylableHorizontalMenu","64":"wixui.StylableLine","65":"wixui.Tags","66":"wixui.TimePicker","67":"wixui.ToggleSwitch","68":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -193,12 +193,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1247.0/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1378.0/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	/* runtime version: 3.7.0 */
+/******/ 	/* runtime version: 3.11.2 */
 /******/ 	function StylableRuntime(exports){
 /******/ 	exports = exports || {};
 /******/ 	function require(){return exports;};
@@ -462,7 +462,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1402);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1464);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -491,7 +491,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 110:
+/***/ 120:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
@@ -506,7 +506,7 @@ var createOverrideMap = function createOverrideMap(requireFn) {
   }, {});
 };
 
-var componentOverrides = createOverrideMap(__webpack_require__(111));
+var componentOverrides = createOverrideMap(__webpack_require__(121));
 
 function getOverrides() {
   return componentOverrides;
@@ -518,7 +518,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 111:
+/***/ 121:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
@@ -534,11 +534,11 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 111;
+webpackEmptyContext.id = 121;
 
 /***/ }),
 
-/***/ 1402:
+/***/ 1464:
 /*!**************************************!*\
   !*** ./components-service/viewer.js ***!
   \**************************************/
@@ -546,87 +546,90 @@ webpackEmptyContext.id = 111;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BaseService = __webpack_require__(/*! ./base-service */ 150);
+var BaseService = __webpack_require__(/*! ./base-service */ 162);
 
 var compsToPackages = {
   'wixui.RichTextBox': function wixuiRichTextBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 56).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 669))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 56).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 691))]);
   },
   'wixui.ToggleSwitch': function wixuiToggleSwitch() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 66).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 668))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 67).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 690))]);
   },
   'wixui.Slider': function wixuiSlider() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 60).then(__webpack_require__.bind(null, /*! ../components/Slider */ 718))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 60).then(__webpack_require__.bind(null, /*! ../components/Slider */ 740))]);
   },
   'wixui.SearchBox': function wixuiSearchBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 57).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 723))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 57).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 745))]);
   },
   'wixui.Captcha': function wixuiCaptcha() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 47).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 712))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 47).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 734))]);
   },
   'wixui.Pagination': function wixuiPagination() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 52).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 707))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 52).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 729))]);
   },
   'wixui.AddressInput': function wixuiAddressInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 44).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 726))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 44).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 748))]);
   },
   'wixui.StylableLine': function wixuiStylableLine() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 63).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 738))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 64).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 760))]);
   },
   'wixui.Tags': function wixuiTags() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 64).then(__webpack_require__.bind(null, /*! ../components/Tags */ 709))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 65).then(__webpack_require__.bind(null, /*! ../components/Tags */ 731))]);
   },
   'wixui.RatingsInput': function wixuiRatingsInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 55).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 710))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 55).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 732))]);
   },
   'wixui.TimePicker': function wixuiTimePicker() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 65).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 731))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 66).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 753))]);
   },
   'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 54).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 713))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 54).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 735))]);
   },
   'wixui.VideoPlayer': function wixuiVideoPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 67).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 703))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 68).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 725))]);
   },
   'wixui.LineShareButton': function wixuiLineShareButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 50).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 735))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 50).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 757))]);
   },
   'wixui.MusicPlayer': function wixuiMusicPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 51).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 648))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 51).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 670))]);
   },
   'wixui.StylableButton': function wixuiStylableButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 61).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 740))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 62).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 762))]);
   },
   'wixui.ProgressBar': function wixuiProgressBar() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 53).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 720))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 53).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 742))]);
   },
   'wixui.BarChart': function wixuiBarChart() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 45).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 715))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 45).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 737))]);
   },
   'wixui.CustomElementComponent': function wixuiCustomElementComponent() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 48).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 779))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 48).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 801))]);
   },
   'wixui.SignatureInput': function wixuiSignatureInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 59).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 777))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 59).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 799))]);
   },
   'wixui.SelectionTagsList': function wixuiSelectionTagsList() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 58).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 782))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 58).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 804))]);
   },
   'wixui.StylableHorizontalMenu': function wixuiStylableHorizontalMenu() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 62).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 784))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 63).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 806))]);
   },
   'wixui.ImageX': function wixuiImageX() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 49).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 787))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 49).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 809))]);
   },
   'wixui.BoltComponent': function wixuiBoltComponent() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.BoltComponent */ 46).then(__webpack_require__.bind(null, /*! ../components/BoltComponent */ 791))]);
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BoltComponent */ 46).then(__webpack_require__.bind(null, /*! ../components/BoltComponent */ 813))]);
+  },
+  'wixui.SocialAuth': function wixuiSocialAuth() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SocialAuth */ 61).then(__webpack_require__.bind(null, /*! ../components/SocialAuth */ 816))]);
   }
 };
 module.exports = new BaseService(compsToPackages);
 
 /***/ }),
 
-/***/ 150:
+/***/ 162:
 /*!********************************************!*\
   !*** ./components-service/base-service.js ***!
   \********************************************/
@@ -634,7 +637,7 @@ module.exports = new BaseService(compsToPackages);
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ../overrides */ 110),
+var _require = __webpack_require__(/*! ../overrides */ 120),
     getOverrides = _require.getOverrides;
 
 function BaseService(_compsToPackages) {
@@ -705,18 +708,6 @@ module.exports = BaseService;
 
 /***/ }),
 
-/***/ 28:
-/*!****************************************************************************************************!*\
-  !*** external {"amd":"reactDOM","commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"} ***!
-  \****************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__28__;
-
-/***/ }),
-
 /***/ 3:
 /*!*************************************************************************************!*\
   !*** external {"amd":"lodash","commonjs":"lodash","commonjs2":"lodash","root":"_"} ***!
@@ -726,6 +717,18 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__28__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
+
+/***/ }),
+
+/***/ 30:
+/*!****************************************************************************************************!*\
+  !*** external {"amd":"reactDOM","commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"} ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__30__;
 
 /***/ }),
 
