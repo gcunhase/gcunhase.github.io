@@ -86,6 +86,56 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../tb-main/src/utils.ts":
+/*!*******************************!*\
+  !*** ../tb-main/src/utils.ts ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.loadStyle = exports.loadScript = void 0;
+
+const loadScript = (src, name) => new Promise(resolve => {
+  const element = document.createElement('script');
+  element.async = false; //make sure the scripts execute in the order they are added
+
+  element.src = src;
+
+  element.onload = () => resolve();
+
+  document.body.appendChild(element);
+}).catch(err => {
+  console.log(`Failed to load script ${name}: ${err.message}`);
+});
+
+exports.loadScript = loadScript;
+
+const loadStyle = (href, name) => new Promise(resolve => {
+  const element = document.createElement('link');
+  element.rel = 'stylesheet';
+  element.href = href;
+
+  element.onload = () => resolve();
+
+  document.body.appendChild(element);
+}).catch(err => {
+  console.log(`Failed to load script ${name}: ${err.message}`);
+});
+
+exports.loadStyle = loadStyle;
+module.exports = {
+  loadScript,
+  loadStyle
+};
+
+/***/ }),
+
 /***/ "./dist/versions.json":
 /*!****************************!*\
   !*** ./dist/versions.json ***!
@@ -93,7 +143,7 @@
 /*! exports provided: bolt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"bolt\":\"1.5138.0\"}");
+module.exports = JSON.parse("{\"bolt\":\"1.7038.0\"}");
 
 /***/ }),
 
@@ -111,26 +161,17 @@ const {
   bolt
 } = __webpack_require__(/*! ../dist/versions.json */ "./dist/versions.json");
 
+const {
+  loadScript
+} = __webpack_require__(/*! tb-main/src/utils */ "../tb-main/src/utils.ts");
+
 if (window.location.search.indexOf('BoltSource') < 0) {
   //eslint-disable-line lodash/prefer-includes
-  window.boltBase = "https://static.parastorage.com/services/wix-bolt/".concat(bolt);
+  window.boltBase = `https://static.parastorage.com/services/wix-bolt/${bolt}`;
 }
 
-const main = "".concat(window.boltBase, "/bolt-main/app/main-r.min.js");
-
-const loadScript = (src, name) => new Promise(resolve => {
-  const element = document.createElement('script');
-  element.async = false; //make sure the scripts execute in the order they are added
-
-  element.src = src;
-
-  element.onload = () => resolve();
-
-  document.body.appendChild(element);
-}).catch(err => {
-  console.log("Failed to load script ".concat(name, ": ").concat(err.message)); //eslint-disable-line no-console
-});
-
+const main = `${window.boltBase}/bolt-main/app/main-r.min.js`;
+loadScript('https://static.parastorage.com/unpkg-semver/wix-recorder@^1/app.bundle.min.js').catch(e => console.log(e));
 loadScript(main).then(() => {}).catch(e => console.log(e));
 
 /***/ })

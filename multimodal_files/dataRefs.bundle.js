@@ -87,52 +87,41 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1c7c39b04fde05efa013a5dd28010598b8a06274/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1534.0/";
 /******/
 /******/
-/******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1103);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1563);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 1103:
+/***/ 1563:
 /*!*********************!*\
   !*** ./dataRefs.js ***!
   \*********************/
-/*! no static exports found */
+/*! exports provided: default */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _dataRefs_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dataRefs.json */ 924);
+var _dataRefs_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./dataRefs.json */ 924, 1);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _dataRefs = __webpack_require__(/*! ./dataRefs.json */ 1104);
-
-var _dataRefs2 = _interopRequireDefault(_dataRefs);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _dataRefs2.default;
+/* harmony default export */ __webpack_exports__["default"] = (_dataRefs_json__WEBPACK_IMPORTED_MODULE_0__);
 
 /***/ }),
 
-/***/ 1104:
+/***/ 924:
 /*!***********************!*\
   !*** ./dataRefs.json ***!
   \***********************/
 /*! exports provided: Data, Design, Properties, default */
-/*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/*! exports used: default */
 /***/ (function(module) {
 
-module.exports = {"Data":{"ImageX":{"link":false},"MusicPlayerData":{"audioRef":false,"coverRef":false},"SelectionTag":{"link":false},"SelectionTagsList":{"options":false},"StylableButton":{"link":false,"a11y":false},"VideoPlayer":{"videoRef":false,"logoRef":false}},"Design":{},"Properties":{}};
+module.exports = JSON.parse("{\"Data\":{\"ImageX\":{\"link\":false},\"MusicPlayerData\":{\"audioRef\":false,\"coverRef\":false},\"SelectionTag\":{\"link\":false},\"SelectionTagsList\":{\"options\":false},\"StylableButton\":{\"link\":false,\"a11y\":false},\"VideoPlayer\":{\"videoRef\":false,\"logoRef\":false}},\"Design\":{},\"Properties\":{}}");
 
 /***/ })
 

@@ -87,27 +87,22 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1c7c39b04fde05efa013a5dd28010598b8a06274/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1534.0/";
 /******/
 /******/
-/******/ 	__webpack_require__.p = typeof window !== 'undefined' && window.__STATICS_BASE_URL__ || __webpack_require__.p;
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 122);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 59:
+/***/ 122:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
 /*! no static exports found */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 
 var createOverrideMap = function createOverrideMap(requireFn) {
   return requireFn.keys().map(requireFn).reduce(function (overridesMap, compOverrideMetadata) {
@@ -115,7 +110,8 @@ var createOverrideMap = function createOverrideMap(requireFn) {
     return overridesMap;
   }, {});
 };
-var componentOverrides = createOverrideMap(__webpack_require__(60));
+
+var componentOverrides = createOverrideMap(__webpack_require__(123));
 
 function getOverrides() {
   return componentOverrides;
@@ -127,13 +123,12 @@ module.exports = {
 
 /***/ }),
 
-/***/ 60:
+/***/ 123:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
 /*! no static exports found */
 /*! all exports used */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -144,7 +139,7 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 60;
+webpackEmptyContext.id = 123;
 
 /***/ })
 

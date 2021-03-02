@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -177,6 +178,9 @@ body.device-mobile-non-optimized.fullScreenMode {
   body.device-mobile-non-optimized.fullScreenMode #SITE_BACKGROUND,
   body.device-mobile-non-optimized.fullScreenMode #MOBILE_ACTIONS_MENU {
     visibility: hidden; }
+
+body.fullScreenMode #WIX_ADS {
+  visibility: hidden; }
 
 body.fullScreenMode {
   overflow-x: hidden !important;
@@ -434,10 +438,11 @@ a.wixAppsLink img {
   left: 0;
   right: 0;
   content: '';
-  background: -webkit-repeating-linear-gradient(135deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
-  background: repeating-linear-gradient(-45deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
-  background-size: 6px 6px;
-  background-repeat: repeat; }
+  background: -webkit-repeating-linear-gradient(135deg, transparent, transparent 40%, #2b5672c7 40%, #2b5672c7 45%, #cbcddee8 45%, #cbcddee8 50%, transparent 50%);
+  background: repeating-linear-gradient(-45deg, transparent, transparent 40%, #2b5672c7 40%, #2b5672c7 45%, #cbcddee8 45%, #cbcddee8 50%, transparent 50%);
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  pointer-events: none; }
 
 .g-transparent-a:link, .g-transparent-a:visited {
   border-color: transparent; }
@@ -482,9 +487,37 @@ a.wixAppsLink img {
     width: 1px;
     display: inline-block; }
 
+@font-face {
+  font-family: "wixFreemiumFontW01-65Medi";
+  font-weight: bold;
+  src: url("//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix");
+  src: url("//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix") format("eot"), url("//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff") format("woff"), url("//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf") format("truetype"), url("//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5") format("svg"); }
+
 .visual-focus-on .focus-ring:not(.has-custom-focus):focus, .visual-focus-on .focus-ring:not(.has-custom-focus):focus ~ .wixSdkShowFocusOnSibling {
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #116dff;
   z-index: 999; }
+
+.skip-to-content-button {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -94px;
+  z-index: 9999;
+  background: #FFFFFF;
+  color: #116DFF;
+  font-family: wixFreemiumFontW01-65Medi, wixFreemiumFontW02-65Medi, wixFreemiumFontW10-65Medi, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo, ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+  font-size: 14px;
+  border-radius: 24px;
+  padding: 0 24px 0 24px;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  cursor: pointer; }
+  .skip-to-content-button:focus {
+    border: 2px solid;
+    opacity: 1;
+    width: auto;
+    height: 40px; }
 
 body.prewarmup .hidden-during-prewarmup {
   visibility: hidden; }
