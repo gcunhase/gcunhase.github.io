@@ -7,7 +7,7 @@
 		exports["viewerComponentService"] = factory(require("react"), require("prop-types"), require("lodash"), require("santa-components"), require("react-dom"));
 	else
 		root["viewerComponentService"] = factory(root["React"], root["prop-types"], root["_"], root["santaComponents"], root["ReactDOM"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__30__) {
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__0__, __WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__3__, __WEBPACK_EXTERNAL_MODULE__4__, __WEBPACK_EXTERNAL_MODULE__32__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -42,19 +42,25 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
+/******/ 	// object to store loaded CSS chunks
+/******/ 	var installedCssChunks = {
+/******/ 		44: 0,
+/******/ 		41: 0
+/******/ 	};
+/******/
 /******/ 	// object to store loaded and loading chunks
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		42: 0,
-/******/ 		39: 0
+/******/ 		44: 0,
+/******/ 		41: 0
 /******/ 	};
 /******/
 /******/
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"44":"wixui.AddressInput","45":"wixui.BarChart","46":"wixui.BoltComponent","47":"wixui.Captcha","48":"wixui.CustomElement","49":"wixui.ImageX","50":"wixui.LineShareButton","51":"wixui.MusicPlayer","52":"wixui.Pagination","53":"wixui.ProgressBar","54":"wixui.RatingsDisplay","55":"wixui.RatingsInput","56":"wixui.RichTextBox","57":"wixui.SearchBox","58":"wixui.SelectionTagsList","59":"wixui.SignatureInput","60":"wixui.Slider","61":"wixui.SocialAuth","62":"wixui.StylableButton","63":"wixui.StylableHorizontalMenu","64":"wixui.StylableLine","65":"wixui.Tags","66":"wixui.TimePicker","67":"wixui.ToggleSwitch","68":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
+/******/ 		return __webpack_require__.p + "" + ({"46":"wixui.AddressInput","47":"wixui.BarChart","48":"wixui.BoltComponent","49":"wixui.Captcha","50":"wixui.CustomElement","51":"wixui.ImageX","52":"wixui.LineShareButton","53":"wixui.MultiStateBox","54":"wixui.MusicPlayer","55":"wixui.OldBlogDeprecation","56":"wixui.Pagination","57":"wixui.ProgressBar","58":"wixui.RatingsDisplay","59":"wixui.RatingsInput","60":"wixui.RichTextBox","61":"wixui.SearchBox","62":"wixui.SelectionTagsList","63":"wixui.SignatureInput","64":"wixui.Slider","65":"wixui.SocialAuth","66":"wixui.StylableButton","67":"wixui.StylableHorizontalMenu","68":"wixui.StylableLine","69":"wixui.Tags","70":"wixui.TimePicker","71":"wixui.ToggleSwitch","72":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -86,6 +92,47 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
 /******/ 		var promises = [];
 /******/
+/******/
+/******/ 		// mini-css-extract-plugin CSS loading
+/******/ 		var cssChunks = {"48":1,"53":1};
+/******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
+/******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
+/******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
+/******/ 				var href = "" + ({"46":"wixui.AddressInput","47":"wixui.BarChart","48":"wixui.BoltComponent","49":"wixui.Captcha","50":"wixui.CustomElement","51":"wixui.ImageX","52":"wixui.LineShareButton","53":"wixui.MultiStateBox","54":"wixui.MusicPlayer","55":"wixui.OldBlogDeprecation","56":"wixui.Pagination","57":"wixui.ProgressBar","58":"wixui.RatingsDisplay","59":"wixui.RatingsInput","60":"wixui.RichTextBox","61":"wixui.SearchBox","62":"wixui.SelectionTagsList","63":"wixui.SignatureInput","64":"wixui.Slider","65":"wixui.SocialAuth","66":"wixui.StylableButton","67":"wixui.StylableHorizontalMenu","68":"wixui.StylableLine","69":"wixui.Tags","70":"wixui.TimePicker","71":"wixui.ToggleSwitch","72":"wixui.VideoPlayer"}[chunkId]||chunkId) + ".chunk.css";
+/******/ 				var fullhref = __webpack_require__.p + href;
+/******/ 				var existingLinkTags = document.getElementsByTagName("link");
+/******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
+/******/ 					var tag = existingLinkTags[i];
+/******/ 					var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+/******/ 					if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return resolve();
+/******/ 				}
+/******/ 				var existingStyleTags = document.getElementsByTagName("style");
+/******/ 				for(var i = 0; i < existingStyleTags.length; i++) {
+/******/ 					var tag = existingStyleTags[i];
+/******/ 					var dataHref = tag.getAttribute("data-href");
+/******/ 					if(dataHref === href || dataHref === fullhref) return resolve();
+/******/ 				}
+/******/ 				var linkTag = document.createElement("link");
+/******/ 				linkTag.rel = "stylesheet";
+/******/ 				linkTag.type = "text/css";
+/******/ 				linkTag.onload = resolve;
+/******/ 				linkTag.onerror = function(event) {
+/******/ 					var request = event && event.target && event.target.src || fullhref;
+/******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + request + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+/******/ 					err.request = request;
+/******/ 					delete installedCssChunks[chunkId]
+/******/ 					linkTag.parentNode.removeChild(linkTag)
+/******/ 					reject(err);
+/******/ 				};
+/******/ 				linkTag.href = fullhref;
+/******/
+/******/ 				var head = document.getElementsByTagName("head")[0];
+/******/ 				head.appendChild(linkTag);
+/******/ 			}).then(function() {
+/******/ 				installedCssChunks[chunkId] = 0;
+/******/ 			}));
+/******/ 		}
 /******/
 /******/ 		// JSONP chunk loading for javascript
 /******/
@@ -193,12 +240,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1378.0/";
+/******/ 	__webpack_require__.p = "https://static.parastorage.com/services/wix-ui-santa/1.1534.0/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	/* runtime version: 3.11.2 */
+/******/ 	/* runtime version: 3.11.14 */
 /******/ 	function StylableRuntime(exports){
 /******/ 	exports = exports || {};
 /******/ 	function require(){return exports;};
@@ -462,7 +509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1464);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1574);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -491,7 +538,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
 
 /***/ }),
 
-/***/ 120:
+/***/ 122:
 /*!**********************!*\
   !*** ./overrides.js ***!
   \**********************/
@@ -506,7 +553,7 @@ var createOverrideMap = function createOverrideMap(requireFn) {
   }, {});
 };
 
-var componentOverrides = createOverrideMap(__webpack_require__(121));
+var componentOverrides = createOverrideMap(__webpack_require__(123));
 
 function getOverrides() {
   return componentOverrides;
@@ -518,7 +565,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 121:
+/***/ 123:
 /*!************************************************!*\
   !*** ./components sync componentOverride\.js$ ***!
   \************************************************/
@@ -534,102 +581,11 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 121;
+webpackEmptyContext.id = 123;
 
 /***/ }),
 
-/***/ 1464:
-/*!**************************************!*\
-  !*** ./components-service/viewer.js ***!
-  \**************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-var BaseService = __webpack_require__(/*! ./base-service */ 162);
-
-var compsToPackages = {
-  'wixui.RichTextBox': function wixuiRichTextBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 56).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 691))]);
-  },
-  'wixui.ToggleSwitch': function wixuiToggleSwitch() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 67).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 690))]);
-  },
-  'wixui.Slider': function wixuiSlider() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 60).then(__webpack_require__.bind(null, /*! ../components/Slider */ 740))]);
-  },
-  'wixui.SearchBox': function wixuiSearchBox() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 57).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 745))]);
-  },
-  'wixui.Captcha': function wixuiCaptcha() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 47).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 734))]);
-  },
-  'wixui.Pagination': function wixuiPagination() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 52).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 729))]);
-  },
-  'wixui.AddressInput': function wixuiAddressInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 44).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 748))]);
-  },
-  'wixui.StylableLine': function wixuiStylableLine() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 64).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 760))]);
-  },
-  'wixui.Tags': function wixuiTags() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 65).then(__webpack_require__.bind(null, /*! ../components/Tags */ 731))]);
-  },
-  'wixui.RatingsInput': function wixuiRatingsInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 55).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 732))]);
-  },
-  'wixui.TimePicker': function wixuiTimePicker() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 66).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 753))]);
-  },
-  'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 54).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 735))]);
-  },
-  'wixui.VideoPlayer': function wixuiVideoPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 68).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 725))]);
-  },
-  'wixui.LineShareButton': function wixuiLineShareButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 50).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 757))]);
-  },
-  'wixui.MusicPlayer': function wixuiMusicPlayer() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 51).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 670))]);
-  },
-  'wixui.StylableButton': function wixuiStylableButton() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 62).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 762))]);
-  },
-  'wixui.ProgressBar': function wixuiProgressBar() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 53).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 742))]);
-  },
-  'wixui.BarChart': function wixuiBarChart() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 45).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 737))]);
-  },
-  'wixui.CustomElementComponent': function wixuiCustomElementComponent() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 48).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 801))]);
-  },
-  'wixui.SignatureInput': function wixuiSignatureInput() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 59).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 799))]);
-  },
-  'wixui.SelectionTagsList': function wixuiSelectionTagsList() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 58).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 804))]);
-  },
-  'wixui.StylableHorizontalMenu': function wixuiStylableHorizontalMenu() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 63).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 806))]);
-  },
-  'wixui.ImageX': function wixuiImageX() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 49).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 809))]);
-  },
-  'wixui.BoltComponent': function wixuiBoltComponent() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.BoltComponent */ 46).then(__webpack_require__.bind(null, /*! ../components/BoltComponent */ 813))]);
-  },
-  'wixui.SocialAuth': function wixuiSocialAuth() {
-    return Promise.all([__webpack_require__.e(/*! import() | wixui.SocialAuth */ 61).then(__webpack_require__.bind(null, /*! ../components/SocialAuth */ 816))]);
-  }
-};
-module.exports = new BaseService(compsToPackages);
-
-/***/ }),
-
-/***/ 162:
+/***/ 157:
 /*!********************************************!*\
   !*** ./components-service/base-service.js ***!
   \********************************************/
@@ -637,7 +593,7 @@ module.exports = new BaseService(compsToPackages);
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _require = __webpack_require__(/*! ../overrides */ 120),
+var _require = __webpack_require__(/*! ../overrides */ 122),
     getOverrides = _require.getOverrides;
 
 function BaseService(_compsToPackages) {
@@ -708,6 +664,103 @@ module.exports = BaseService;
 
 /***/ }),
 
+/***/ 1574:
+/*!**************************************!*\
+  !*** ./components-service/viewer.js ***!
+  \**************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+var BaseService = __webpack_require__(/*! ./base-service */ 157);
+
+var compsToPackages = {
+  'wixui.RichTextBox': function wixuiRichTextBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RichTextBox */ 60).then(__webpack_require__.bind(null, /*! ../legacy/components/RichTextBox */ 700))]);
+  },
+  'wixui.ToggleSwitch': function wixuiToggleSwitch() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ToggleSwitch */ 71).then(__webpack_require__.bind(null, /*! ../legacy/components/ToggleSwitch */ 699))]);
+  },
+  'wixui.Slider': function wixuiSlider() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Slider */ 64).then(__webpack_require__.bind(null, /*! ../components/Slider */ 750))]);
+  },
+  'wixui.SearchBox': function wixuiSearchBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SearchBox */ 61).then(__webpack_require__.bind(null, /*! ../components/SearchBox */ 755))]);
+  },
+  'wixui.Captcha': function wixuiCaptcha() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Captcha */ 49).then(__webpack_require__.bind(null, /*! ../components/Captcha */ 744))]);
+  },
+  'wixui.Pagination': function wixuiPagination() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Pagination */ 56).then(__webpack_require__.bind(null, /*! ../components/Pagination */ 739))]);
+  },
+  'wixui.AddressInput': function wixuiAddressInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.AddressInput */ 46).then(__webpack_require__.bind(null, /*! ../components/AddressInput */ 758))]);
+  },
+  'wixui.StylableLine': function wixuiStylableLine() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableLine */ 68).then(__webpack_require__.bind(null, /*! ../components/StylableLine */ 778))]);
+  },
+  'wixui.Tags': function wixuiTags() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.Tags */ 69).then(__webpack_require__.bind(null, /*! ../components/Tags */ 741))]);
+  },
+  'wixui.RatingsInput': function wixuiRatingsInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsInput */ 59).then(__webpack_require__.bind(null, /*! ../components/RatingsInput */ 742))]);
+  },
+  'wixui.TimePicker': function wixuiTimePicker() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.TimePicker */ 70).then(__webpack_require__.bind(null, /*! ../components/TimePicker */ 772))]);
+  },
+  'wixui.RatingsDisplay': function wixuiRatingsDisplay() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.RatingsDisplay */ 58).then(__webpack_require__.bind(null, /*! ../components/RatingsDisplay */ 745))]);
+  },
+  'wixui.VideoPlayer': function wixuiVideoPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.VideoPlayer */ 72).then(__webpack_require__.bind(null, /*! ../components/VideoPlayer */ 735))]);
+  },
+  'wixui.LineShareButton': function wixuiLineShareButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.LineShareButton */ 52).then(__webpack_require__.bind(null, /*! ../components/LineShareButton */ 775))]);
+  },
+  'wixui.MusicPlayer': function wixuiMusicPlayer() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.MusicPlayer */ 54).then(__webpack_require__.bind(null, /*! ../components/MusicPlayer */ 679))]);
+  },
+  'wixui.StylableButton': function wixuiStylableButton() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableButton */ 66).then(__webpack_require__.bind(null, /*! ../components/StylableButton */ 780))]);
+  },
+  'wixui.ProgressBar': function wixuiProgressBar() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ProgressBar */ 57).then(__webpack_require__.bind(null, /*! ../components/ProgressBar */ 752))]);
+  },
+  'wixui.BarChart': function wixuiBarChart() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BarChart */ 47).then(__webpack_require__.bind(null, /*! ../components/BarChart */ 747))]);
+  },
+  'wixui.CustomElementComponent': function wixuiCustomElementComponent() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.CustomElement */ 50).then(__webpack_require__.bind(null, /*! ../components/CustomElement */ 820))]);
+  },
+  'wixui.SignatureInput': function wixuiSignatureInput() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SignatureInput */ 63).then(__webpack_require__.bind(null, /*! ../components/SignatureInput */ 817))]);
+  },
+  'wixui.SelectionTagsList': function wixuiSelectionTagsList() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SelectionTagsList */ 62).then(__webpack_require__.bind(null, /*! ../components/SelectionTagsList */ 823))]);
+  },
+  'wixui.StylableHorizontalMenu': function wixuiStylableHorizontalMenu() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.StylableHorizontalMenu */ 67).then(__webpack_require__.bind(null, /*! ../components/StylableHorizontalMenu */ 825))]);
+  },
+  'wixui.ImageX': function wixuiImageX() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.ImageX */ 51).then(__webpack_require__.bind(null, /*! ../components/ImageX */ 828))]);
+  },
+  'wixui.BoltComponent': function wixuiBoltComponent() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.BoltComponent */ 48).then(__webpack_require__.bind(null, /*! ../components/BoltComponent */ 832))]);
+  },
+  'wixui.SocialAuth': function wixuiSocialAuth() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.SocialAuth */ 65).then(__webpack_require__.bind(null, /*! ../components/SocialAuth */ 835))]);
+  },
+  'wixui.OldBlogDeprecation': function wixuiOldBlogDeprecation() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.OldBlogDeprecation */ 55).then(__webpack_require__.bind(null, /*! ../components/OldBlogDeprecation */ 838))]);
+  },
+  'wixui.MultiStateBox': function wixuiMultiStateBox() {
+    return Promise.all([__webpack_require__.e(/*! import() | wixui.MultiStateBox */ 53).then(__webpack_require__.bind(null, /*! ../components/MultiStateBox */ 840))]);
+  }
+};
+module.exports = new BaseService(compsToPackages);
+
+/***/ }),
+
 /***/ 3:
 /*!*************************************************************************************!*\
   !*** external {"amd":"lodash","commonjs":"lodash","commonjs2":"lodash","root":"_"} ***!
@@ -720,7 +773,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
 
 /***/ }),
 
-/***/ 30:
+/***/ 32:
 /*!****************************************************************************************************!*\
   !*** external {"amd":"reactDOM","commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"} ***!
   \****************************************************************************************************/
@@ -728,7 +781,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__30__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__32__;
 
 /***/ }),
 
@@ -737,7 +790,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__30__;
   !*** external {"amd":"santa-components","commonjs":"santa-components","commonjs2":"santa-components","root":"santaComponents"} ***!
   \*********************************************************************************************************************************/
 /*! no static exports found */
-/*! exports used: HOC, SantaComponentHelperMethods, constants, mixins, santaTypesDefinitions, utils */
+/*! exports used: HOC, SantaComponentHelperMethods, components, constants, mixins, santaTypesDefinitions, utils */
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__4__;
